@@ -1,1 +1,772 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>UMKM Jaya | Produk Lokal Berkualitas</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fefcf5;
+        color: #1e2a2f;
+        line-height: 1.5;
+        scroll-behavior: smooth;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Header / Navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px 0;
+        gap: 16px;
+      }
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        background: linear-gradient(135deg, #2b7a3e, #f4b942);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .logo i {
+        color: #f4b942;
+        margin-right: 6px;
+        background: none;
+        -webkit-background-clip: unset;
+        background-clip: unset;
+        color: #f4b942;
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+      }
+      .nav-links a {
+        text-decoration: none;
+        font-weight: 500;
+        color: #2c4b3e;
+        transition: 0.2s;
+        font-size: 1rem;
+      }
+      .nav-links a:hover {
+        color: #f4b942;
+      }
+      .btn-contact {
+        background-color: #2b7a3e;
+        color: white;
+        padding: 10px 24px;
+        border-radius: 40px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 0.9rem;
+      }
+      .btn-contact:hover {
+        background-color: #1f5e2f;
+        transform: scale(1.02);
+      }
+
+      /* Hero Section */
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 40px 0 60px;
+      }
+      .hero-text {
+        flex: 1;
+      }
+      .hero-text .badge {
+        background: #fef1cf;
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #b47c2e;
+        margin-bottom: 20px;
+      }
+      .hero-text h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: #1e2a2f;
+      }
+      .hero-text h1 span {
+        color: #f4b942;
+      }
+      .hero-text p {
+        font-size: 1.1rem;
+        color: #4a5b55;
+        margin-bottom: 30px;
+        max-width: 90%;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        background-color: #f4b942;
+        color: #2c3e2b;
+        padding: 12px 28px;
+        border-radius: 40px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 1rem;
+      }
+      .btn-primary:hover {
+        background-color: #e0a72e;
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 2px solid #2b7a3e;
+        padding: 10px 26px;
+        border-radius: 40px;
+        font-weight: 600;
+        color: #2b7a3e;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .btn-outline:hover {
+        background: #2b7a3e10;
+        border-color: #f4b942;
+      }
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+      .hero-image img {
+        max-width: 100%;
+        border-radius: 32px;
+        box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Section umum */
+      .section {
+        padding: 70px 0;
+      }
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: #1e2a2f;
+      }
+      .section-sub {
+        text-align: center;
+        color: #5c6e67;
+        max-width: 700px;
+        margin: 0 auto 48px auto;
+      }
+
+      /* Produk Grid */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 32px;
+        margin-top: 20px;
+      }
+      .product-card {
+        background: white;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.25s ease;
+        cursor: pointer;
+      }
+      .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+      }
+      .product-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        background: #e9e5d8;
+      }
+      .product-info {
+        padding: 20px;
+      }
+      .product-info h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .price {
+        font-weight: 700;
+        color: #f4b942;
+        font-size: 1.3rem;
+        margin: 10px 0;
+      }
+      .product-desc {
+        color: #5b6e66;
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+      }
+      .btn-buy {
+        background: #2b7a3e;
+        border: none;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+        width: 100%;
+      }
+      .btn-buy:hover {
+        background: #1f5e2f;
+      }
+
+      /* Testimoni */
+      .testimonials {
+        background-color: #fff8ec;
+        border-radius: 48px;
+        padding: 48px 24px;
+      }
+      .testi-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
+      .testi-card {
+        background: white;
+        border-radius: 32px;
+        padding: 28px;
+        max-width: 320px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        transition: 0.2s;
+      }
+      .testi-card i {
+        color: #f4b942;
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+      }
+      .testi-text {
+        font-style: italic;
+        margin: 12px 0;
+        color: #2d3e38;
+      }
+      .testi-name {
+        font-weight: 700;
+        margin-top: 10px;
+      }
+
+      /* CTA & Kontak */
+      .cta-section {
+        background: linear-gradient(145deg, #1f3e32, #2b5a42);
+        border-radius: 40px;
+        color: white;
+        text-align: center;
+        padding: 56px 24px;
+      }
+      .cta-section h2 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+      }
+      .cta-section button {
+        background: #f4b942;
+        border: none;
+        padding: 14px 32px;
+        font-weight: 700;
+        font-size: 1rem;
+        border-radius: 40px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 20px;
+        border-radius: 60px;
+      }
+      footer {
+        text-align: center;
+        padding: 30px;
+        border-top: 1px solid #e9e0cf;
+        margin-top: 20px;
+        color: #5f7168;
+      }
+
+      /* Modal Popup */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
+      .modal-content {
+        background: white;
+        max-width: 400px;
+        width: 90%;
+        padding: 28px 24px;
+        border-radius: 32px;
+        text-align: center;
+        position: relative;
+        animation: fadeSlide 0.2s ease;
+      }
+      @keyframes fadeSlide {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .modal-content h3 {
+        margin-bottom: 16px;
+        font-size: 1.6rem;
+      }
+      .modal-content p {
+        margin-bottom: 20px;
+        color: #2c4b3e;
+      }
+      .close-modal {
+        background: #f4b942;
+        border: none;
+        padding: 8px 28px;
+        border-radius: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .whatsapp-link {
+        display: inline-block;
+        background: #25d366;
+        color: white;
+        text-decoration: none;
+        padding: 10px 24px;
+        border-radius: 40px;
+        margin-top: 12px;
+        font-weight: 600;
+      }
+      button {
+        font-family: "Inter", sans-serif;
+      }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+        }
+        .hero-text h1 {
+          font-size: 2.3rem;
+        }
+        .hero-text p {
+          max-width: 100%;
+        }
+        .section-title {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo"><i class="fas fa-store"></i> UMKM Jaya</div>
+          <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+          <button class="btn-contact" id="contactNavBtn">
+            <i class="fas fa-phone-alt"></i> Hubungi Kami
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home">
+        <div class="container">
+          <div class="hero">
+            <div class="hero-text">
+              <div class="badge">
+                <i class="fas fa-leaf"></i> Produk Lokal Nusantara
+              </div>
+              <h1>
+                Rasakan Keaslian <br />
+                <span>Kualitas UMKM</span> Terbaik
+              </h1>
+              <p>
+                Mendukung produk lokal berkualitas, dari tangan terampil
+                pengrajin & petani Indonesia. Belanja langsung, fresh &
+                autentik.
+              </p>
+              <div class="hero-buttons">
+                <button class="btn-primary" id="exploreBtn">
+                  Jelajahi Produk <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn-outline" id="promoBtn">
+                  Dapatkan Promo
+                </button>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img
+                src="https://picsum.photos/id/30/500/400"
+                alt="Produk UMKM Lokal"
+                style="width: 100%; max-width: 400px; border-radius: 28px"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Produk Unggulan -->
+      <section id="produk">
+        <div class="container">
+          <h2 class="section-title">✨ Produk Unggulan ✨</h2>
+          <p class="section-sub">
+            Pilihan terbaik dari UMKM lokal, kualitas premium dengan harga ramah
+            di kantong
+          </p>
+          <div class="products-grid" id="productsGrid"></div>
+        </div>
+      </section>
+
+      <!-- Testimoni -->
+      <section id="testimoni">
+        <div class="container">
+          <div class="testimonials">
+            <h2 class="section-title">Apa Kata Pelanggan?</h2>
+            <p class="section-sub">
+              Dipercaya oleh ratusan pelanggan yang merasakan sendiri kualitas
+              produk kami
+            </p>
+            <div class="testi-grid" id="testiGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA + Kontak -->
+      <section id="kontak">
+        <div class="container">
+          <div class="cta-section">
+            <h2>Siap Meningkatkan Usaha & Belanja Berkualitas?</h2>
+            <p>
+              Dapatkan informasi stok terbaru, konsultasi produk, dan penawaran
+              spesial untuk Anda.
+            </p>
+            <button id="ctaContactBtn">
+              <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+            </button>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i> Jl. Raya Dagang No. 88,
+                Yogyakarta
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i> umkmjaya@local.id
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-clock"></i> Senin - Sabtu, 09:00 - 17:00
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 UMKM Jaya - Membangun Ekonomi Kreatif Indonesia. 🌱</p>
+    </footer>
+
+    <!-- Modal Popup -->
+    <div id="orderModal" class="modal">
+      <div class="modal-content">
+        <i
+          class="fas fa-shopping-cart"
+          style="font-size: 2.5rem; color: #f4b942"
+        ></i>
+        <h3>Pesan Sekarang</h3>
+        <p id="modalProductName">Produk pilihanmu</p>
+        <p>Hubungi kami langsung untuk pemesanan dan informasi lebih lanjut.</p>
+        <a href="#" id="modalWhatsappLink" class="whatsapp-link" target="_blank"
+          ><i class="fab fa-whatsapp"></i> Pesan via WhatsApp</a
+        >
+        <div style="margin-top: 16px">
+          <button class="close-modal" id="closeModalBtn">Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Data Produk UMKM
+      const products = [
+        {
+          id: 1,
+          name: "Keripik Singkong Gurih",
+          price: "Rp 18.000",
+          desc: "Renyah, bumbu spesial original dan pedas, kemasan 250gr.",
+          img: "https://picsum.photos/id/132/400/300",
+          category: "makanan",
+        },
+        {
+          id: 2,
+          name: "Madu Hutan Murni",
+          price: "Rp 85.000",
+          desc: "Madu alami tanpa campuran, kaya manfaat, toples 350ml.",
+          img: "https://picsum.photos/id/104/400/300",
+          category: "minuman",
+        },
+        {
+          id: 3,
+          name: "Tenun Ikat NTT",
+          price: "Rp 290.000",
+          desc: "Kain tenun tangan motif tradisional, bahan halus.",
+          img: "https://picsum.photos/id/82/400/300",
+          category: "fashion",
+        },
+        {
+          id: 4,
+          name: "Kopi Arabika Gayo",
+          price: "Rp 55.000",
+          desc: "Biji kopi pilihan, aroma khas, 200gr sangrai sedang.",
+          img: "https://picsum.photos/id/284/400/300",
+          category: "minuman",
+        },
+      ];
+
+      // Data Testimoni
+      const testimonials = [
+        {
+          name: "Sari Wulandari",
+          text: "Produk UMKM Jaya luar biasa! Keripik singkongnya renyah dan rasanya juara. Cepat sampai, recomended!",
+          rating: "⭐⭐⭐⭐⭐",
+        },
+        {
+          name: "Bambang Hidayat",
+          text: "Madu hutan asli banget, khasiatnya terasa. Saya jadi langganan rutin. Pelayanan ramah!",
+          rating: "⭐⭐⭐⭐⭐",
+        },
+        {
+          name: "Dewi Kartika",
+          text: "Tenun ikat sangat cantik, kualitas premium. Bangga pakai produk lokal. Terima kasih UMKM Jaya!",
+          rating: "⭐⭐⭐⭐⭐",
+        },
+      ];
+
+      // Render produk ke grid
+      function renderProducts() {
+        const grid = document.getElementById("productsGrid");
+        if (!grid) return;
+        grid.innerHTML = "";
+        products.forEach((product) => {
+          const card = document.createElement("div");
+          card.className = "product-card";
+          card.setAttribute("data-id", product.id);
+          card.innerHTML = `
+        <img class="product-img" src="${product.img}" alt="${product.name}" loading="lazy">
+        <div class="product-info">
+          <h3>${product.name}</h3>
+          <div class="price">${product.price}</div>
+          <div class="product-desc">${product.desc}</div>
+          <button class="btn-buy" data-name="${product.name}" data-price="${product.price}">Beli Sekarang</button>
+        </div>
+      `;
+          grid.appendChild(card);
+        });
+
+        // Event listener untuk semua tombol beli
+        document.querySelectorAll(".btn-buy").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const productName = btn.getAttribute("data-name");
+            const productPrice = btn.getAttribute("data-price");
+            openModal(productName, productPrice);
+          });
+        });
+      }
+
+      // Render testimoni
+      function renderTestimonials() {
+        const testiContainer = document.getElementById("testiGrid");
+        if (!testiContainer) return;
+        testiContainer.innerHTML = "";
+        testimonials.forEach((t) => {
+          const card = document.createElement("div");
+          card.className = "testi-card";
+          card.innerHTML = `
+        <i class="fas fa-quote-left"></i>
+        <div>${t.rating}</div>
+        <p class="testi-text">"${t.text}"</p>
+        <div class="testi-name">- ${t.name}</div>
+      `;
+          testiContainer.appendChild(card);
+        });
+      }
+
+      // Modal logic
+      const modal = document.getElementById("orderModal");
+      const modalProductNameSpan = document.getElementById("modalProductName");
+      const modalWhatsappLink = document.getElementById("modalWhatsappLink");
+      let currentProduct = { name: "", price: "" };
+
+      function openModal(productName, productPrice) {
+        currentProduct = { name: productName, price: productPrice };
+        modalProductNameSpan.innerText = `${productName} - ${productPrice}`;
+        // Set WhatsApp link
+        const message = `Halo UMKM Jaya, saya tertarik untuk membeli ${productName} (${productPrice}). Apakah masih tersedia?`;
+        const encodedMsg = encodeURIComponent(message);
+        modalWhatsappLink.href = `https://wa.me/6281234567890?text=${encodedMsg}`; // contoh nomor WA bisnis
+        modal.style.display = "flex";
+      }
+
+      function closeModal() {
+        modal.style.display = "none";
+      }
+
+      // Global WA untuk kontak (tanpa produk spesifik)
+      function openWhatsappGeneric() {
+        const msg = encodeURIComponent(
+          "Halo, saya tertarik dengan produk UMKM Jaya. Mohon info lebih lanjut.",
+        );
+        window.open(`https://wa.me/6281234567890?text=${msg}`, "_blank");
+      }
+
+      // Smooth scroll & navigasi
+      function setupSmoothScroll() {
+        const links = document.querySelectorAll(".nav-links a");
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+        // tombol explore produk
+        const exploreBtn = document.getElementById("exploreBtn");
+        if (exploreBtn) {
+          exploreBtn.addEventListener("click", () => {
+            document
+              .getElementById("produk")
+              .scrollIntoView({ behavior: "smooth" });
+          });
+        }
+        // promo button (alert interaktif)
+        const promoBtn = document.getElementById("promoBtn");
+        if (promoBtn) {
+          promoBtn.addEventListener("click", () => {
+            alert(
+              "🎉 Promo spesial! Dapatkan diskon 10% untuk pembelian pertama. Hubungi kami via WhatsApp!",
+            );
+          });
+        }
+      }
+
+      // Event contact button navbar & CTA
+      function bindContactEvents() {
+        const contactNav = document.getElementById("contactNavBtn");
+        const ctaBtn = document.getElementById("ctaContactBtn");
+        if (contactNav)
+          contactNav.addEventListener("click", openWhatsappGeneric);
+        if (ctaBtn) ctaBtn.addEventListener("click", openWhatsappGeneric);
+      }
+
+      // Tambahkan interaksi sederhana, animasi hover, dan notifikasi beli
+      function addExtraInteractions() {
+        // Menampilkan notifikasi singkat ketika produk diklik (card)
+        const productCards = document.getElementById("productsGrid");
+        if (productCards) {
+          productCards.addEventListener("click", (e) => {
+            let targetCard = e.target.closest(".product-card");
+            if (targetCard && !e.target.classList.contains("btn-buy")) {
+              const productTitle = targetCard.querySelector("h3")?.innerText;
+              if (productTitle) {
+                alert(
+                  `✨ ${productTitle} — produk unggulan UMKM Nusantara. Klik "Beli Sekarang" untuk memesan!`,
+                );
+              }
+            }
+          });
+        }
+      }
+
+      // Modal close handler
+      function modalHandlers() {
+        const closeBtn = document.getElementById("closeModalBtn");
+        if (closeBtn) closeBtn.addEventListener("click", closeModal);
+        window.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+      }
+
+      // Inisialisasi halaman & data dinamis
+      function init() {
+        renderProducts();
+        renderTestimonials();
+        setupSmoothScroll();
+        bindContactEvents();
+        addExtraInteractions();
+        modalHandlers();
+      }
+
+      init();
+    </script>
+  </body>
+</html>
